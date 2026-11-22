@@ -25,10 +25,13 @@ public class Borrowing {
     @JoinColumn(name = "book_copy_id")
     private BookCopy bookCopy;
 
+    @Column(nullable = false)
     private LocalDate borrowDate;
+    @Column(nullable = false)
     private LocalDate dueDate;
     private LocalDate returnDate;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private BorrowingStatus status;
 }

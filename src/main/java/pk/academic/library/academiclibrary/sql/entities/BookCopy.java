@@ -21,5 +21,13 @@ public class BookCopy {
     private String inventoryNumber;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private CopyStatus status;
+
+    @Column(nullable = false)
+    private String branchId = "MAIN";
+
+    public BookCopy(String id, String publicationId, String inventoryNumber, CopyStatus status) {
+        this(id, publicationId, inventoryNumber, status, "MAIN");
+    }
 }
