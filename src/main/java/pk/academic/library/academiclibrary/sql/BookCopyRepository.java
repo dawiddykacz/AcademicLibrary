@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface BookCopyRepository extends JpaRepository<BookCopy, String> {
     List<BookCopy> findByPublicationIdAndStatus(String publicationId, CopyStatus status);
+    List<BookCopy> findByPublicationIdAndBranchIdAndStatus(String publicationId, String branchId, CopyStatus status);
 }

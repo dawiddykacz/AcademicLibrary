@@ -9,7 +9,12 @@ import lombok.*;
 public class Reader {
     @Id
     private String id;
+    @Column(nullable = false)
     private String firstName;
+
+    @Column(nullable = false)
     private String lastName;
+
+    @Column(nullable = false, unique = true)
     private String email;
 }
